@@ -11,7 +11,8 @@ import SwiftUI
 struct Taste_TrekkerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
+//            ContentView()
         }
     }
 }
