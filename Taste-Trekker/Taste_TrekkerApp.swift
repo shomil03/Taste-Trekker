@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+
 @main
 struct Taste_TrekkerApp: App {
+    @AppStorage("pageNumber", store: .standard) var page : Int = 1
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
-//            ContentView()
+//            SplashScreenView(page: $page)
+            onBoardingScreenView2(healthIssue: [""], page: $page, dietType: .Vegetarian)
         }
     }
 }

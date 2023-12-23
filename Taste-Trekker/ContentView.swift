@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("pageNumber") var page : Int?
     @StateObject var fooditems = FoodItems()
     @State var spice_tolerance : Int = 0
     @State var hungerLevel : Int = 0
     @State var food = ""
+    
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -25,10 +28,14 @@ struct ContentView: View {
                                 .opacity(0.5)
                             
                         }
-                        .frame(height: geo.size.height )
+//                        .frame(height: geometry.size.height * 0.70 )
+                        .frame(height: UIScreen.main.bounds.height * 0.37)
+//                        .clipped()
+                        
+                        
                         
                     }
-                    .frame(height: geometry.size.height * 0.70)
+//                    .frame(height: geometry.size.height * 0.70)
                     VStack{
                         ScrollView(.horizontal){
                             HStack
@@ -40,8 +47,10 @@ struct ContentView: View {
                             }
                             .padding()
                         }
+                        
                         Button("Submit")
                         {
+                            optional()
                             food = "food item for h\(hungerLevel) s\(spice_tolerance)"
                             let newFood = FoodItem(name: food)
                             withAnimation{
@@ -57,7 +66,8 @@ struct ContentView: View {
                             .frame(height: 1)
                             .padding(.horizontal)
                     }
-                    .frame(height: geometry.size.height * 1.39)
+//                    .frame(height: geometry.size.height * 1.39)
+                    .frame(height: UIScreen.main.bounds.height * 0.60)
                 }
                 VStack{
                     withAnimation(.easeIn){
@@ -67,6 +77,8 @@ struct ContentView: View {
                     }
 
                 }
+                
+                
                 
                 List{
                     if(fooditems.items.count > 0)
@@ -107,7 +119,9 @@ struct ContentView: View {
             
            
         }
+        
         .preferredColorScheme(.light)
+        
         
         
     }
@@ -115,8 +129,14 @@ struct ContentView: View {
     {
         fooditems.items.remove(atOffsets: atOffset)
     }
+    func optional(){
+        if let number = page {
+            print(number)
+        }
+    }
  
 }
+
 
 #Preview {
     ContentView()

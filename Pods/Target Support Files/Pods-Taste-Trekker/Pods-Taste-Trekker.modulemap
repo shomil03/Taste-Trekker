@@ -1,0 +1,6 @@
+framework module Pods_Taste_Trekker {
+  umbrella header "Pods-Taste-Trekker-umbrella.h"
+
+  export *
+  module * { export * }
+}
