@@ -6,15 +6,14 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
     @AppStorage("pageNumber") var page : Int?
     @StateObject var fooditems = FoodItems()
     @State var spice_tolerance : Int = 0
     @State var hungerLevel : Int = 0
     @State var food = ""
-    
-    
+    @StateObject var userdata = UserData()
+    @ObservedObject private var viewModel = userViewModel()
     var body: some View {
         NavigationStack{
             VStack {
@@ -28,16 +27,16 @@ struct ContentView: View {
                                 .opacity(0.5)
                             
                         }
-//                        .frame(height: geometry.size.height * 0.70 )
+                        //                        .frame(height: geometry.size.height * 0.70 )
                         .frame(height: UIScreen.main.bounds.height * 0.37)
-//                        .clipped()
+                        //                        .clipped()
                         
                         
                         
                     }
-//                    .frame(height: geometry.size.height * 0.70)
+                    //                    .frame(height: geometry.size.height * 0.70)
                     VStack{
-                        ScrollView(.horizontal){
+                        ScrollView(.horizontal ,showsIndicators: false){
                             HStack
                             {
                                 hunger_stepper(HungerLevel: $hungerLevel)
@@ -50,13 +49,15 @@ struct ContentView: View {
                         
                         Button("Submit")
                         {
+                            let response = ResponseData(SpicyLevel: spice_tolerance, HungerLevel: hungerLevel)
+                            response.registerUser()
                             optional()
                             food = "food item for h\(hungerLevel) s\(spice_tolerance)"
                             let newFood = FoodItem(name: food)
                             withAnimation{
                                 fooditems.items.insert(newFood, at: 0)
                             }
-                           
+                            
                         }
                         .foregroundStyle(.teal)
                         .bold()
@@ -66,7 +67,7 @@ struct ContentView: View {
                             .frame(height: 1)
                             .padding(.horizontal)
                     }
-//                    .frame(height: geometry.size.height * 1.39)
+                    //                    .frame(height: geometry.size.height * 1.39)
                     .frame(height: UIScreen.main.bounds.height * 0.60)
                 }
                 VStack{
@@ -75,7 +76,7 @@ struct ContentView: View {
                             .font(.headline)
                             .padding()
                     }
-
+                    
                 }
                 
                 
@@ -92,7 +93,7 @@ struct ContentView: View {
                             .onDelete(perform: removeItems)
                         }
                     }
-                  
+                    
                 }
             }
             .toolbar{
@@ -110,17 +111,28 @@ struct ContentView: View {
                         
                     }
                 }
-                ToolbarItem(placement: .topBarTrailing)
-                {
-                    Image(systemName: "person.crop.circle")
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(destination: Account_View(userdata: userdata)) {
+                        Label(
+                            title: {
+                                Text("Account")
+                                    .foregroundStyle(.black)
+                            },
+                            icon: {
+                                Image(systemName: "person.crop.circle")
+                            }
+                        )
+                    }
                 }
             }
-           
-            
-           
+            .onAppear{
+                viewModel.addNewData(UUID: "\(userdata.user.id)")
+
+            }
         }
         
         .preferredColorScheme(.light)
+        
         
         
         

@@ -97,7 +97,7 @@ struct onBoardingScreenView: View {
                         )
                         .foregroundStyle(.white)
                         .navigationDestination(isPresented: $showingScreen1) {
-                            onBoardingScreenView2(healthIssue: [""], page: .constant(2), dietType: .Vegetarian).navigationBarBackButtonHidden(true)
+                            onBoardingScreenView2(healthIssue: [""], page: .constant(2), userdata: userdata, dietType: .Vegetarian).navigationBarBackButtonHidden(true)
                         }
                         .disabled(name.isEmpty || weight.isEmpty || height.isEmpty)
                         .onTapGesture {

@@ -18,6 +18,7 @@ struct onBoardingScreenView2: View {
     @FocusState var hideKeyboard : Bool
     @ObservedObject var userdata = UserData()
     @State var dietType : DietPrefrence
+    @ObservedObject private var viewModel = userViewModel()
     var body: some View {
         NavigationStack{
             
@@ -54,6 +55,7 @@ struct onBoardingScreenView2: View {
                             }
                             ForEach(0..<(healthIssue.count) , id: \.self){index in
                                 TextField(" specify health issue", text: $healthIssue[index])
+                                    .focused($hideKeyboard)
                             }.onDelete(perform: removeItems)
                             
                             
@@ -74,6 +76,7 @@ struct onBoardingScreenView2: View {
                     .scrollContentBackground(.hidden)
                     
                     Button("Continue"){
+                        
                         userdata.updateDiet(dietType: dietType, healthIssues: healthIssue)
                         showingScreen2 = true
                         page = 3
@@ -89,7 +92,7 @@ struct onBoardingScreenView2: View {
                     )
                     .foregroundStyle(.white)
                     .navigationDestination(isPresented: $showingScreen2) {
-                        ContentView().navigationBarBackButtonHidden(true)
+                        ContentView(userdata: userdata).navigationBarBackButtonHidden(true)
                     }
 
                     Spacer()
@@ -103,7 +106,7 @@ struct onBoardingScreenView2: View {
                             
                             Button("Done")
                             {
-                                hideKeyboard = true
+                                hideKeyboard = false
                             }
                         }
                     

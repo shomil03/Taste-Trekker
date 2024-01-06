@@ -11,6 +11,7 @@
 		4F0A8D292B32F100001FC4CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A8D282B32F100001FC4CA /* User.swift */; };
 		4F15AE262B320C0B007A8D9F /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15AE252B320C0B007A8D9F /* FoodItem.swift */; };
 		4F15AE282B320C75007A8D9F /* FoodItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F15AE272B320C75007A8D9F /* FoodItems.swift */; };
+		4F6E1F462B3B0B8000D5820F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E1F452B3B0B8000D5820F /* ViewModel.swift */; };
 		4F6FA6702B271A4B004E68FD /* Taste_TrekkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FA66F2B271A4B004E68FD /* Taste_TrekkerApp.swift */; };
 		4F6FA6722B271A4B004E68FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FA6712B271A4B004E68FD /* ContentView.swift */; };
 		4F6FA6742B271A4C004E68FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FA6732B271A4C004E68FD /* Assets.xcassets */; };
@@ -18,8 +19,15 @@
 		4F83DD1A2B331E6A0083CAA8 /* onBoardingScreenView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83DD192B331E6A0083CAA8 /* onBoardingScreenView1.swift */; };
 		4FAF5E432B317445007E2FF7 /* Spice_stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF5E422B317445007E2FF7 /* Spice_stepper.swift */; };
 		4FAF5E452B317A25007E2FF7 /* hunger stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF5E442B317A25007E2FF7 /* hunger stepper.swift */; };
+		4FF253962B36F17E00C915E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FE77D872B36EDD100AAFEF1 /* GoogleService-Info.plist */; };
 		4FF345632B349BD300674A90 /* onBoardingScreenView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF345622B349BD300674A90 /* onBoardingScreenView2.swift */; };
 		4FF345652B357F9200674A90 /* userData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF345642B357F9200674A90 /* userData.swift */; };
+		4FFBD67C2B394C1800B1B53E /* Account_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD67B2B394C1800B1B53E /* Account_View.swift */; };
+		4FFBD67E2B3959E500B1B53E /* changeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD67D2B3959E500B1B53E /* changeName.swift */; };
+		4FFBD6802B395D7100B1B53E /* changeWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD67F2B395D7100B1B53E /* changeWeight.swift */; };
+		4FFBD6862B398C0900B1B53E /* userViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD6852B398C0900B1B53E /* userViewModel.swift */; };
+		4FFBD6882B39F1C200B1B53E /* changeHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD6872B39F1C200B1B53E /* changeHeight.swift */; };
+		4FFBD68A2B3A03C200B1B53E /* changeHealthProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFBD6892B3A03C200B1B53E /* changeHealthProblem.swift */; };
 		E1DB42FF9DF573C0D0C7C473 /* Pods_Taste_Trekker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA95DD0E6164B26E0EFEC9C /* Pods_Taste_Trekker.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +38,7 @@
 		4F0A8D282B32F100001FC4CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4F15AE252B320C0B007A8D9F /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		4F15AE272B320C75007A8D9F /* FoodItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItems.swift; sourceTree = "<group>"; };
+		4F6E1F452B3B0B8000D5820F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4F6FA66C2B271A4B004E68FD /* Taste-Trekker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taste-Trekker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6FA66F2B271A4B004E68FD /* Taste_TrekkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taste_TrekkerApp.swift; sourceTree = "<group>"; };
 		4F6FA6712B271A4B004E68FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,8 +47,15 @@
 		4F83DD192B331E6A0083CAA8 /* onBoardingScreenView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingScreenView1.swift; sourceTree = "<group>"; };
 		4FAF5E422B317445007E2FF7 /* Spice_stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spice_stepper.swift; sourceTree = "<group>"; };
 		4FAF5E442B317A25007E2FF7 /* hunger stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hunger stepper.swift"; sourceTree = "<group>"; };
+		4FE77D872B36EDD100AAFEF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Pods/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FF345622B349BD300674A90 /* onBoardingScreenView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingScreenView2.swift; sourceTree = "<group>"; };
 		4FF345642B357F9200674A90 /* userData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
+		4FFBD67B2B394C1800B1B53E /* Account_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account_View.swift; sourceTree = "<group>"; };
+		4FFBD67D2B3959E500B1B53E /* changeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeName.swift; sourceTree = "<group>"; };
+		4FFBD67F2B395D7100B1B53E /* changeWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeWeight.swift; sourceTree = "<group>"; };
+		4FFBD6852B398C0900B1B53E /* userViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userViewModel.swift; sourceTree = "<group>"; };
+		4FFBD6872B39F1C200B1B53E /* changeHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeHeight.swift; sourceTree = "<group>"; };
+		4FFBD6892B3A03C200B1B53E /* changeHealthProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeHealthProblem.swift; sourceTree = "<group>"; };
 		53CA71DBAB52646AE7C61FD6 /* Pods-Taste-Trekker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-Trekker.debug.xcconfig"; path = "Target Support Files/Pods-Taste-Trekker/Pods-Taste-Trekker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +74,8 @@
 		4F6FA6632B271A4B004E68FD = {
 			isa = PBXGroup;
 			children = (
+				4FFBD6842B398BD400B1B53E /* viewModel */,
+				4FE77D872B36EDD100AAFEF1 /* GoogleService-Info.plist */,
 				4F6FA66E2B271A4B004E68FD /* Taste-Trekker */,
 				4F6FA66D2B271A4B004E68FD /* Products */,
 				66713EE976EDA6B91DB77128 /* Pods */,
@@ -81,6 +99,11 @@
 				4F83DD192B331E6A0083CAA8 /* onBoardingScreenView1.swift */,
 				4FF345622B349BD300674A90 /* onBoardingScreenView2.swift */,
 				4F6FA6712B271A4B004E68FD /* ContentView.swift */,
+				4FFBD67B2B394C1800B1B53E /* Account_View.swift */,
+				4FFBD6892B3A03C200B1B53E /* changeHealthProblem.swift */,
+				4FFBD67D2B3959E500B1B53E /* changeName.swift */,
+				4FFBD67F2B395D7100B1B53E /* changeWeight.swift */,
+				4FFBD6872B39F1C200B1B53E /* changeHeight.swift */,
 				4F0A8D282B32F100001FC4CA /* User.swift */,
 				4FF345642B357F9200674A90 /* userData.swift */,
 				4F15AE272B320C75007A8D9F /* FoodItems.swift */,
@@ -101,13 +124,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4FFBD6842B398BD400B1B53E /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBD6852B398C0900B1B53E /* userViewModel.swift */,
+				4F6E1F452B3B0B8000D5820F /* ViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		66713EE976EDA6B91DB77128 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				53CA71DBAB52646AE7C61FD6 /* Pods-Taste-Trekker.debug.xcconfig */,
 				0E22F9DEDCB0F7049DF6BF2F /* Pods-Taste-Trekker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -179,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF253962B36F17E00C915E0 /* GoogleService-Info.plist in Resources */,
 				4F6FA6772B271A4C004E68FD /* Preview Assets.xcassets in Resources */,
 				4F6FA6742B271A4C004E68FD /* Assets.xcassets in Resources */,
 			);
@@ -241,6 +273,13 @@
 				4F83DD1A2B331E6A0083CAA8 /* onBoardingScreenView1.swift in Sources */,
 				4F0A8D292B32F100001FC4CA /* User.swift in Sources */,
 				4FF345652B357F9200674A90 /* userData.swift in Sources */,
+				4FFBD67E2B3959E500B1B53E /* changeName.swift in Sources */,
+				4FFBD68A2B3A03C200B1B53E /* changeHealthProblem.swift in Sources */,
+				4F6E1F462B3B0B8000D5820F /* ViewModel.swift in Sources */,
+				4FFBD6862B398C0900B1B53E /* userViewModel.swift in Sources */,
+				4FFBD6802B395D7100B1B53E /* changeWeight.swift in Sources */,
+				4FFBD67C2B394C1800B1B53E /* Account_View.swift in Sources */,
+				4FFBD6882B39F1C200B1B53E /* changeHeight.swift in Sources */,
 				4FAF5E432B317445007E2FF7 /* Spice_stepper.swift in Sources */,
 				4FAF5E452B317A25007E2FF7 /* hunger stepper.swift in Sources */,
 				4F15AE262B320C0B007A8D9F /* FoodItem.swift in Sources */,
@@ -287,7 +326,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -350,7 +389,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -386,6 +425,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -416,6 +456,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

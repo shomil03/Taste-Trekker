@@ -18,17 +18,18 @@ struct SplashScreenView: View {
     @State private var rotation = false
     @State private var textOpacity = 1.0
     @State private var startup = true
+    @ObservedObject var userdata = UserData()
     var view : some View{
         NavigationStack{
 //            if let page = page{
 //            print(page)
             switch page{
             case 1:
-                return AnyView(onBoardingScreenView(page: $page).navigationBarBackButtonHidden(true))
+                AnyView(onBoardingScreenView(page: $page,userdata: userdata).navigationBarBackButtonHidden(true))
             case 2:
-                return AnyView(onBoardingScreenView2(healthIssue: [""], page: $page, dietType: .Vegetarian).navigationBarBackButtonHidden(true))
+                AnyView(onBoardingScreenView2(healthIssue: [""], page: $page, userdata: userdata, dietType: .Vegetarian).navigationBarBackButtonHidden(true))
             default:
-                return AnyView(ContentView().navigationBarBackButtonHidden(true))
+                AnyView(ContentView(userdata: userdata).navigationBarBackButtonHidden(true))
             }
 //        }
         }
@@ -90,7 +91,6 @@ struct SplashScreenView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                         withAnimation(.easeOut(duration: 1.2)){
                             scaleEffect = 3
-    //                        opacity = 1.0
                             textOpacity = 0.0
                             
                         }
