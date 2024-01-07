@@ -92,7 +92,8 @@ struct onBoardingScreenView2: View {
                     )
                     .foregroundStyle(.white)
                     .navigationDestination(isPresented: $showingScreen2) {
-                        ContentView(userdata: userdata).navigationBarBackButtonHidden(true)
+                        ContentView(userdata: userdata, food_description: food.init()
+                        ).navigationBarBackButtonHidden(true)
                     }
 
                     Spacer()

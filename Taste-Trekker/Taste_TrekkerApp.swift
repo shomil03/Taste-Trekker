@@ -24,6 +24,7 @@ struct Taste_TrekkerApp: App {
     var body: some Scene {
         WindowGroup {
             SplashScreenView(page: $page)
+//            HomeView()
 //            onBoardingScreenView2(healthIssue: [""], page: $page, dietType: .Vegetarian)
         }
     }

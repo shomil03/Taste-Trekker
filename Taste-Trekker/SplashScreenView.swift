@@ -29,7 +29,7 @@ struct SplashScreenView: View {
             case 2:
                 AnyView(onBoardingScreenView2(healthIssue: [""], page: $page, userdata: userdata, dietType: .Vegetarian).navigationBarBackButtonHidden(true))
             default:
-                AnyView(ContentView(userdata: userdata).navigationBarBackButtonHidden(true))
+                AnyView(ContentView(userdata: userdata, food_description: food.init()).navigationBarBackButtonHidden(true))
             }
 //        }
         }

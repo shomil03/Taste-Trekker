@@ -12,6 +12,16 @@ struct Account_View: View {
     @ObservedObject private var viewModel = userViewModel()
     @State private var isDatePresented = false
     @State private var isPickerPresented = false
+    
+    func formatUnit(_ unit : Double)-> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.minimumFractionDigits = 0
+        numberFormatter.maximumFractionDigits = 2
+        if let formattedHeight = numberFormatter.string(from: NSNumber(value: unit)){
+            return "\(formattedHeight)"
+        }
+        return ""
+    }
     var body: some View {
         
         NavigationStack{
@@ -34,14 +44,14 @@ struct Account_View: View {
                                 HStack{
                                     Text("Weight:")
                                     Spacer()
-                                    Text("\(userdata.user.weight)")
+                                    Text("\(formatUnit(_:userdata.user.weight))")
                                 }
                             })
                             NavigationLink(destination: changeWeight(userdata: userdata,weight: ""), label: {
                                 HStack{
                                     Text("Height:")
                                     Spacer()
-                                    Text("\(userdata.user.height)")
+                                    Text("\(formatUnit(_:userdata.user.height))")
                                 }
                             })
                             HStack{

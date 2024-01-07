@@ -7,21 +7,32 @@
 
 import Foundation
 import SwiftUI
+import Combine
 struct EndPoint{
     static let registerUser = "https://demonkillerh.pythonanywhere.com/recommendDish"
     
 }
 
-struct ResponseData{
-    var SpicyLevel : Int
-    var HungerLevel : Int
-    func registerUser(){
+class UserViewModel: ObservableObject {
+
+    @Published var isLoading : Bool = false
+    @Published var FoodResponse : food?
+    private var cancellables: Set<AnyCancellable> = []
+    
+    func registerUser(SpicyLevel : Int , HungerLevel : Int){
+//        let userdata = UserData()
+        
+        let ingredients: [String] = [""]
         @ObservedObject var userdata = UserData()
         
         let Ingredients : [String] = [""]
+        isLoading = true
         var urlRequest = URLRequest(url: URL(string: EndPoint.registerUser)!)
         urlRequest.httpMethod = "post"
-        let dataDictionary = ["UserId" : "\(userdata.user.id)" , "SpicyLevel" : SpicyLevel, "HungerLevel" : HungerLevel , "Ingredients" : Ingredients ] as [String : Any]
+        let dataDictionary = ["UserId" : "\(userdata.user.id)" ,
+                              "SpicyLevel" : SpicyLevel,
+                              "HungerLevel" : HungerLevel ,
+                              "Ingredients" : Ingredients ] as [String : Any]
         
         do{
             let requestBody = try JSONSerialization.data(withJSONObject: dataDictionary , options: .prettyPrinted)
@@ -35,6 +46,8 @@ struct ResponseData{
             print(error.localizedDescription)
         }
         
+        
+        
         URLSession.shared.dataTask(with: urlRequest) { data, HTTPURLResponse, error in
             if ( data != nil && data?.count != 0)
             {
@@ -42,6 +55,25 @@ struct ResponseData{
                 print("response = ",response!)
             }
         }.resume()
+        URLSession.shared.dataTaskPublisher(for: urlRequest)
+                   .map(\.data)
+                   .decode(type: food.self, decoder: JSONDecoder())
+                   .receive(on: DispatchQueue.main)
+                   .sink { completion in
+                       self.isLoading = false
+                       switch completion {
+                       case .finished:
+                           break
+                       case .failure(let error):
+                           print("Error: \(error)")
+                           
+                       }
+                   } receiveValue: { decodedResponse in
+                       
+                       self.FoodResponse = decodedResponse
+                      
+                   }
+                   .store(in: &cancellables)
         
     }
     

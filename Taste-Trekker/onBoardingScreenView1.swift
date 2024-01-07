@@ -22,6 +22,9 @@ struct onBoardingScreenView: View {
     @State var showingAlert : Bool = false
     @State var showingScreen1 = false
     @ObservedObject var userdata = UserData()
+    let gradient = LinearGradient(colors: [.red, .green],
+                                  startPoint: .topLeading,
+                                  endPoint: .bottomTrailing)
     var body: some View {
         NavigationStack{
             
